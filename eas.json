@@ -1,0 +1,42 @@
+{
+  "cli": {
+    "version": ">= 3.13.3"
+  },
+  "build": {
+    "development": {
+      "bun": "1.1.23",
+      "channel": "development",
+      "distribution": "internal",
+      "developmentClient": true,
+      "ios": {
+        "simulator": true,
+        "buildConfiguration": "Debug"
+      },
+      "android": {
+        "buildType": "apk",
+        "gradleCommand": ":app:assembleDebug"
+      }
+    },
+    "preview": {
+      "bun": "1.1.23",
+      "channel": "preview",
+      "distribution": "internal",
+      "developmentClient": true,
+      "android": {
+        "buildType": "apk",
+        "gradleCommand": ":app:assembleDebug"
+      }
+    },
+    "production": {
+      "bun": "1.1.23",
+      "channel": "production",
+      "android": {
+        "gradleCommand": ":app:assembleRelease",
+        "distribution": "store"
+      }
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}
